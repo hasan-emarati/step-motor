@@ -2,7 +2,7 @@
 This program was created by the
 CodeWizardAVR V3.12 Advanced
 Automatic Program Generator
-© Copyright 1998-2014 Pavel Haiduc, HP InfoTech s.r.l.
+ï¿½ Copyright 1998-2014 Pavel Haiduc, HP InfoTech s.r.l.
 http://www.hpinfotech.com
 
 Project :
@@ -191,7 +191,7 @@ while (1)
            PORTC=step[i];
            delay_ms(100);
 
-              if(PIND.1==0)                        //check kardan dokme stop
+              if(PIND.1==1)                        //check kardan dokme stop
                   {
                        bala=1;
                         play=0;
@@ -223,7 +223,7 @@ while (1)
            PORTC=step[i];
            delay_ms(100);
 
-            if(PIND.1==0)                  //check kardan dokme stop
+            if(PIND.1==1)                  //check kardan dokme stop
                   {
                        bala=1;
                         play=0;
@@ -252,19 +252,19 @@ while (1)
 
        if(ertefa==4 ){bala=1;}
        if(ertefa==0 ){bala=0;}
-       if(PIND.0==0 && stepp >0)
+       if(PIND.0==1 && stepp >0)
        {
        bala=0;
        PORTA.0=1;PORTA.1=0;
        play=1;
 
        }
-        if(PIND.2==0 && play==0)
+        if(PIND.2==1 && play==0)
        {
          stepp++;
         delay_ms(300);
        }
-        if(PIND.3==0 && play==0 && stepp>0 )
+        if(PIND.3==1 && play==0 && stepp>0 )
        {
          stepp--;
          delay_ms(300);

@@ -1,9 +1,9 @@
 
-AVRASM ver. 2.1.30  C:\Users\Administrator\Desktop\kkoonni\Debug\List\projje.asm Wed Jun 19 12:48:47 2024
+AVRASM ver. 2.1.30  H:\Git\Git_Hub\Electronic\step-motor\Code\Debug\List\projje.asm Thu Jul 11 06:58:58 2024
 
-C:\Users\Administrator\Desktop\kkoonni\Debug\List\projje.asm(1088): warning: Register r5 already defined by the .DEF directive
-C:\Users\Administrator\Desktop\kkoonni\Debug\List\projje.asm(1089): warning: Register r4 already defined by the .DEF directive
-C:\Users\Administrator\Desktop\kkoonni\Debug\List\projje.asm(1090): warning: Register r7 already defined by the .DEF directive
+H:\Git\Git_Hub\Electronic\step-motor\Code\Debug\List\projje.asm(1088): warning: Register r5 already defined by the .DEF directive
+H:\Git\Git_Hub\Electronic\step-motor\Code\Debug\List\projje.asm(1089): warning: Register r4 already defined by the .DEF directive
+H:\Git\Git_Hub\Electronic\step-motor\Code\Debug\List\projje.asm(1090): warning: Register r7 already defined by the .DEF directive
                  
                  
                  ;CodeVisionAVR C Compiler V3.12 Advanced
@@ -1248,7 +1248,7 @@ C:\Users\Administrator\Desktop\kkoonni\Debug\List\projje.asm(1090): warning: Reg
                  ;This program was created by the
                  ;CodeWizardAVR V3.12 Advanced
                  ;Automatic Program Generator
-                 ;© Copyright 1998-2014 Pavel Haiduc, HP InfoTech s.r.l.
+                 ;ï¿½ Copyright 1998-2014 Pavel Haiduc, HP InfoTech s.r.l.
                  ;http://www.hpinfotech.com
                  ;
                  ;Project :
@@ -1588,8 +1588,8 @@ C:\Users\Administrator\Desktop\kkoonni\Debug\List\projje.asm(1090): warning: Reg
 0000e8 940e 03b7 	CALL SUBOPT_0x1
                  ; 0000 00C0            delay_ms(100);
                  ; 0000 00C1 
-                 ; 0000 00C2               if(PIND.1==0)                        //check kardan dokme stop
-0000ea 9981      	SBIC 0x10,1
+                 ; 0000 00C2               if(PIND.1==1)                        //check kardan dokme stop
+0000ea 9b81      	SBIS 0x10,1
 0000eb c002      	RJMP _0x16
                  ; 0000 00C3                   {
                  ; 0000 00C4                        bala=1;
@@ -1667,8 +1667,8 @@ C:\Users\Administrator\Desktop\kkoonni\Debug\List\projje.asm(1090): warning: Reg
 00010c 940e 03b7 	CALL SUBOPT_0x1
                  ; 0000 00E0            delay_ms(100);
                  ; 0000 00E1 
-                 ; 0000 00E2             if(PIND.1==0)                  //check kardan dokme stop
-00010e 9981      	SBIC 0x10,1
+                 ; 0000 00E2             if(PIND.1==1)                  //check kardan dokme stop
+00010e 9b81      	SBIS 0x10,1
 00010f c002      	RJMP _0x27
                  ; 0000 00E3                   {
                  ; 0000 00E4                        bala=1;
@@ -1747,9 +1747,9 @@ C:\Users\Administrator\Desktop\kkoonni\Debug\List\projje.asm(1090): warning: Reg
 000132 e040     +LDI R20 , LOW ( 0 )
 000133 e050     +LDI R21 , HIGH ( 0 )
                  	__GETWRN 20,21,0
-                 ; 0000 00FF        if(PIND.0==0 && stepp >0)
+                 ; 0000 00FF        if(PIND.0==1 && stepp >0)
                  _0x34:
-000134 9980      	SBIC 0x10,0
+000134 9b80      	SBIS 0x10,0
 000135 c003      	RJMP _0x36
 000136 940e 03b2 	CALL SUBOPT_0x0
 000138 f00c      	BRLT _0x37
@@ -1772,9 +1772,9 @@ C:\Users\Administrator\Desktop\kkoonni\Debug\List\projje.asm(1090): warning: Reg
 000141 8bfb      	STD  Y+18+1,R31
                  ; 0000 0104 
                  ; 0000 0105        }
-                 ; 0000 0106         if(PIND.2==0 && play==0)
+                 ; 0000 0106         if(PIND.2==1 && play==0)
                  _0x35:
-000142 9982      	SBIC 0x10,2
+000142 9b82      	SBIS 0x10,2
 000143 c004      	RJMP _0x3D
 000144 89aa      	LDD  R26,Y+18
 000145 89bb      	LDD  R27,Y+18+1
@@ -1791,9 +1791,9 @@ C:\Users\Administrator\Desktop\kkoonni\Debug\List\projje.asm(1090): warning: Reg
 00014c 940e 03c9 	CALL SUBOPT_0x3
                  ; 0000 0109         delay_ms(300);
                  ; 0000 010A        }
-                 ; 0000 010B         if(PIND.3==0 && play==0 && stepp>0 )
+                 ; 0000 010B         if(PIND.3==1 && play==0 && stepp>0 )
                  _0x3C:
-00014e 9983      	SBIC 0x10,3
+00014e 9b83      	SBIS 0x10,3
 00014f c007      	RJMP _0x40
 000150 89aa      	LDD  R26,Y+18
 000151 89bb      	LDD  R27,Y+18+1
@@ -2817,7 +2817,7 @@ lds   :   0 lpm   :  15 lsl   :   0 lsr   :   0 mov   :  22 movw  :  17
 mul   :   1 muls  :   0 mulsu :   0 neg   :   2 nop   :   0 or    :   4 
 ori   :   7 out   :  42 pop   :   1 push  :   1 rcall :  19 ret   :  29 
 reti  :   0 rjmp  :  71 rol   :   0 ror   :   0 sbc   :   2 sbci  :   6 
-sbi   :   9 sbic  :   5 sbis  :   0 sbiw  :  28 sbr   :   0 sbrc  :   2 
+sbi   :   9 sbic  :   0 sbis  :   5 sbiw  :  28 sbr   :   0 sbrc  :   2 
 sbrs  :  10 sec   :   0 seh   :   0 sei   :   0 sen   :   0 ser   :   0 
 ses   :   0 set   :   0 sev   :   0 sez   :   0 sleep :   0 spm   :   0 
 st    :  60 std   :  39 sts   :   2 sub   :   1 subi  :  20 swap  :   1 

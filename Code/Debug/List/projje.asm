@@ -1227,7 +1227,7 @@ __GLOBAL_INI_END:
 ;This program was created by the
 ;CodeWizardAVR V3.12 Advanced
 ;Automatic Program Generator
-;© Copyright 1998-2014 Pavel Haiduc, HP InfoTech s.r.l.
+;ï¿½ Copyright 1998-2014 Pavel Haiduc, HP InfoTech s.r.l.
 ;http://www.hpinfotech.com
 ;
 ;Project :
@@ -1545,8 +1545,8 @@ _0x14:
 	CALL SUBOPT_0x1
 ; 0000 00C0            delay_ms(100);
 ; 0000 00C1 
-; 0000 00C2               if(PIND.1==0)                        //check kardan dokme stop
-	SBIC 0x10,1
+; 0000 00C2               if(PIND.1==1)                        //check kardan dokme stop
+	SBIS 0x10,1
 	RJMP _0x16
 ; 0000 00C3                   {
 ; 0000 00C4                        bala=1;
@@ -1615,8 +1615,8 @@ _0x25:
 	CALL SUBOPT_0x1
 ; 0000 00E0            delay_ms(100);
 ; 0000 00E1 
-; 0000 00E2             if(PIND.1==0)                  //check kardan dokme stop
-	SBIC 0x10,1
+; 0000 00E2             if(PIND.1==1)                  //check kardan dokme stop
+	SBIS 0x10,1
 	RJMP _0x27
 ; 0000 00E3                   {
 ; 0000 00E4                        bala=1;
@@ -1683,9 +1683,9 @@ _0x33:
 	OR   R0,R19
 	BRNE _0x34
 	__GETWRN 20,21,0
-; 0000 00FF        if(PIND.0==0 && stepp >0)
+; 0000 00FF        if(PIND.0==1 && stepp >0)
 _0x34:
-	SBIC 0x10,0
+	SBIS 0x10,0
 	RJMP _0x36
 	CALL SUBOPT_0x0
 	BRLT _0x37
@@ -1705,9 +1705,9 @@ _0x37:
 	STD  Y+18+1,R31
 ; 0000 0104 
 ; 0000 0105        }
-; 0000 0106         if(PIND.2==0 && play==0)
+; 0000 0106         if(PIND.2==1 && play==0)
 _0x35:
-	SBIC 0x10,2
+	SBIS 0x10,2
 	RJMP _0x3D
 	LDD  R26,Y+18
 	LDD  R27,Y+18+1
@@ -1724,9 +1724,9 @@ _0x3E:
 	CALL SUBOPT_0x3
 ; 0000 0109         delay_ms(300);
 ; 0000 010A        }
-; 0000 010B         if(PIND.3==0 && play==0 && stepp>0 )
+; 0000 010B         if(PIND.3==1 && play==0 && stepp>0 )
 _0x3C:
-	SBIC 0x10,3
+	SBIS 0x10,3
 	RJMP _0x40
 	LDD  R26,Y+18
 	LDD  R27,Y+18+1
